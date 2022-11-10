@@ -35,17 +35,22 @@ function LoginFormPage() {
             });
     };
 
+    const demoLogin = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password'}))
+    }
+
     return (
-        <>
+        <div className='login-form-container'>
             <h1>Login</h1>
-            <form className='session-form' onSubmit={handleSubmit}>
-                <ul>
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
+            <form className='login-form' onSubmit={handleSubmit}>
                 <label>
-                    Username or Email
                     <input
                         type='text'
+                        id='credential'
+                        placeholder='Username or Email'
                         value={credential}
                         onChange={(e) => setCredential(e.target.value)}
                         required
@@ -53,18 +58,25 @@ function LoginFormPage() {
                 </label>
                 <br />
                 <label>
-                    Password
                     <input
                         type="password"
+                        id="password"
+                        placeholder='password'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                 </label>
                 <br />
-                <button type="submit">Log In</button>
+                <button className='login-form-button' type="submit">Log In</button>
+                <br />
+                <button className='login-form-button' onClick={e => demoLogin(e)}>Demo Login</button>
+                <br />
             </form>
-        </>
+            <ul>
+                {errors.map((error, i) => <li key={i}>{error}</li>)}
+            </ul>
+        </div>
     );
 };
 

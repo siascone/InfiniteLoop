@@ -36,43 +36,59 @@ function SignupFormPage() {
             });
     };
 
+    const demoLogin = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        demoLogin(SessionActions.login({credential: 'Demo-lition', password: 'password'}))
+    }
+
     return (
-        <>
-            <h1>Signup</h1>
-            <form className='session-form' onSubmit={handleSubmit}>
-                <ul>
-                    {errors.map(error => <li key={error}>{error}</li>)}
-                </ul>
-                <label>Username
+        <div className='signup-form-container'>
+            <h1>Signup </h1>
+            <form className='signup-form' onSubmit={handleSubmit}>
+                <label>
                     <input
                         type='text'
+                        id='username'
+                        placeholder='username'
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
                     />
                 </label>
                 <br />
-                <label>Email
+                <label>
                     <input
                         type='text'
+                        id='email'
+                        placeholder='email'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                 </label>
                 <br />
-                <label>Password
+                <label>
                     <input
                         type='password'
+                        id='password'
+                        placeholder='password'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                 </label>
                 <br />
-                <input type="submit" value="Log In" />
+                <input lassName='signup-form-button' type="submit" value="Log In" />
+                <br />
+                <button className='login-form-button' onClick={e => demoLogin(e)}>Demo Login</button>
+                <br />
             </form>
-        </>
+            <ul>
+                {errors.map(error => <li key={error}>{error}</li>)}
+            </ul>
+        </div>
     );
 }
 
