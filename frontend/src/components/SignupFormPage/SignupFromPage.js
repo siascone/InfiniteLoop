@@ -40,7 +40,7 @@ function SignupFormPage() {
         e.preventDefault();
         e.stopPropagation();
 
-        demoLogin(SessionActions.login({credential: 'Demo-lition', password: 'password'}))
+        dispatch(SessionActions.login({ credential: 'Demo-lition', password: 'password' }))
     }
 
     return (
@@ -80,7 +80,7 @@ function SignupFormPage() {
                     />
                 </label>
                 <br />
-                <input lassName='signup-form-button' type="submit" value="Log In" />
+                <button className='login-form-button' type="submit">Log In</button>
                 <br />
                 <button className='login-form-button' onClick={e => demoLogin(e)}>Demo Login</button>
                 <br />

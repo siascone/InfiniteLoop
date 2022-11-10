@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: infinite_loop_production
-  username: infinite_loop
-  password: <%= ENV["INFINITE_LOOP_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
