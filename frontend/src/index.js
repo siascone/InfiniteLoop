@@ -7,6 +7,7 @@ import App from './App';
 import configureStore from './store/store';
 import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session';
+import logo from './components/Navigation/logo.png'
 
 const store = configureStore();
 
@@ -15,6 +16,8 @@ if (process.env.NODE_ENV !== 'production') {
   window.csrfFetch = csrfFetch;
   window.sessionActions = sessionActions
 };
+
+window.logo = logo;
 
 function Root() {
   return (

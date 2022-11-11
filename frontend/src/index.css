@@ -30,6 +30,12 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+
+html {
+	height: 100%;
+	width: 100%;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif;
+}
 body {
 	line-height: 1;
 }

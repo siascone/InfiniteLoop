@@ -17,15 +17,15 @@ function NavBar() {
         );
     } else {
         sessionLinks = (
-            <div>
-                <NavLink className='auth-link' to="/login">Log In</NavLink>
-                <NavLink className='auth-link' to="/signup">Sign Up</NavLink>
+            <div className='nav-links'>
+                <NavLink className='auth-link-login' to="/login">Log In</NavLink>
+                <NavLink className='auth-link-signup' to="/signup">Sign Up</NavLink>
             </div>
         )
     }
     return (
         <div className='nav-bar'>
-            <NavLink exact to='/'>InfiniteLoop</NavLink>
+            <NavLink className='nav-logo' exact to='/'><img className='nav-logo-img' src={window.logo} /><span className='infinite'>infinite</span><span className='loop'>loop</span></NavLink>
             {sessionLinks}
         </div>
     )
