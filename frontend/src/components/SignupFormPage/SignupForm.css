@@ -1,24 +1,85 @@
+.signup-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 98px; */
+    color: #232629;
+    height: 100%;
+}
+
 .signup-form-container {
     display: flex;
     flex-direction: column;
-    align-self: center;
     justify-content: center;
-    width: 200px;
-    border: 1px solid black;
-    margin-top: 100px
+    width: 220px;
+    background-color: #FFFFFF;
+    margin: 0 0 24px;
+    padding: 24px;
+    border-radius: 6px;
+    box-shadow: 0 10px 24px hsla(0, 0%, 0%, 0.05),
+        0 20px 48px hsla(0, 0%, 0%, 0.05),
+        0 1px 4px hsla(0, 0%, 0%, 0.1);
 }
 
-.signup-form-container h1 {
-    font-size: 24px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.signup-message {
+    padding-top: 270px;
+    font-size: 20px;
     text-align: center;
-    padding: 10px
+    padding-bottom: 20px;
+}
+
+.signup-message > p {
+    padding-bottom: 8px;
 }
 
 .signup-form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
+}
+
+#signup-label {
+    text-align: left;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    padding: 0 2px;
+}
+
+.password-message, .agreement-message {
+    font-size: 12px;
+    font-weight: 200;
+    margin: 4px 0;
+    /* padding: 0 2px; */
+    line-height: 1.25em;
+    color: #6a737c;
+}
+
+.agreement-message > p > span {
+    font-weight: bold;
+}
+
+.signup-form > input {
+    padding: 8px 9px;
+    border-radius: 3px;
+    border: 1px solid hsl(210, 8%, 65%)
+}
+
+.signup-login-link {
+    margin: 0 0 24px;
+    padding: 16px;
+    font-size: 13px;
+    padding-bottom: 70px;
+}
+
+.signup-login-link > p > a {
+    text-decoration: none;
+    color: #0074CC;
+}
+
+.signup-login-link > p > a:hover {
+    color: #0A95ff;
 }
 
 .signup-form-button {

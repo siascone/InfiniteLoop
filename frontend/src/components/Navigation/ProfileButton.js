@@ -29,18 +29,26 @@ function ProfileButton({ user }) {
         dispatch(sessionAction.logout());
     };
 
+    const showAlert = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        return alert("User Profile coming soon.")
+    }
+
     return (
-        <div>
+        <div className='profile-main'>
             <button onClick={openMenu}>
-                <i className='fa-solid fa-user-circle' />
+                <i className='fa-solid fa-user' />
             </button>
             {showMenu && (
                 <ul className='profile-dropdown'>
-                    <li>{user.username}</li>
+                    {/* <li>{user.username}</li>
                     <li>{user.email}</li>
                     <li>
                         <button onClick={logout}>Log Out</button>
-                    </li>
+                    </li> */}
+                    User Profile coming soon.
                 </ul>
             )}
         </div>

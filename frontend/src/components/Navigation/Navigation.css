@@ -16,16 +16,32 @@
     text-align: center;
 }
 
-.nav-bar > a {
+.nav-bar-left > a {
     color: hsl(210, 8%, 15%);
     text-decoration: none;
+}
+
+.nav-bar-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 49px;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
-    margin-left: 10px;
     font-size: 20px;
+    height: 49px;
+    padding-right: 10px;
 }
 
 .nav-logo-img {
@@ -51,11 +67,15 @@
     font-weight: bold;
 }
 
+.nav-links-logged-in {
+    display: flex;
+}
+
 /* .auth-link {
     padding-left: 10px;
 } */
 
-.auth-link-login {
+.auth-link-login, .nav-logout {
     color: #39739D;
     background-color: #E1ECF4;
     padding: 8px 10px;
@@ -65,9 +85,15 @@
     border: 1px solid #39739D;
     text-align: center;
     margin-right: 5px;
+    box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 40%);
 }
 
-.auth-link-login:hover {
+.nav-logout {
+    height: 34px;
+    align-self: center;
+}
+
+.auth-link-login:hover, .nav-logout:hover {
     background-color: hsl(205, 57%, 81%);
 }
 .auth-link-signup {
@@ -79,20 +105,63 @@
     font-size: 13px;
     border: 1px solid #39739D;
     text-align: center;
+    box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 40%);
 }
 
 .auth-link-signup:hover {
     background-color: hsl(206, 100%, 40%);
 }
 
+.profile-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: 15px; */
+    width: 50px;
+    height: 49px;
+}
 
+.profile-main > i {
+    /* height: 30px;
+    width: 30px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75em;
+}
+
+.profile-main > button {
+    height: 25px;
+    width: 25px;
+    background-color: #FFFFFF;
+    border: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.profile-main:hover, .nav-logo:hover, .nav-menu:hover {
+    background-color: hsl(210, 8%, 85%);
+}
 
 .profile-dropdown {
     position: absolute;
-    top: 20px;
-    right: 20px;
-    border: 1px solid black;
+    top: 45px;
+    right: 15px;
+    border: 1px solid hsl(210, 8%, 75%);
     border-radius: 6px;
     background-color: white;
     padding: 10px;
+    font-size: 13px;
 }
+
+.menu-dropdown {
+    position: absolute;
+    top: 45px;
+    left: 15px;
+    border: 1px solid hsl(210, 8%, 75%);
+    border-radius: 6px;
+    background-color: white;
+    padding: 10px;
+    font-size: 13px;
+}
+

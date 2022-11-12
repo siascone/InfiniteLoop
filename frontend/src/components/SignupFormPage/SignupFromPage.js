@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as SessionActions from '../../store/session';
 import { useDispatch, useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 import './SignupForm.css'
 
 function SignupFormPage() {
@@ -44,50 +44,69 @@ function SignupFormPage() {
     }
 
     return (
-        <div className='signup-form-container'>
-            <h1>Signup </h1>
-            <form className='signup-form' onSubmit={handleSubmit}>
-                <label>
+        <div className='signup-main'>
+            
+            <div className='signup-message'>
+                <p>Create your Stack Overflow account. It’s</p>
+                <p>free and only takes a minute.</p>
+            </div>
+
+            <div className='login-bio-links'>
+                <a href="https://spenceriascone.com" target="_blank" className='portfolio'><i class="fa fa-user" aria-hidden="true"></i> <span>Developer portfolio</span></a>
+                <a href="https://github.com/siascone/InfiniteLoop" target="_blank" className='github'><i class="fa-brands fa-github"></i> <span>infiniteLoop GitHub</span></a>
+                <a href="https://www.linkedin.com/in/spencer-iascone-56b28b62/" target="_blank" className='linkedIn'><i class="fa-brands fa-linkedin-in"></i> <span>Connect on LinkedIn</span></a>
+            </div>
+
+            <div className='signup-form-container'>
+                <form className='signup-form' onSubmit={handleSubmit}>
+                    <label id='signup-label' for='username'>Display name</label>
                     <input
                         type='text'
                         id='username'
-                        placeholder='username'
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         required
                     />
-                </label>
-                <br />
-                <label>
+                    <br />
+                    <label id='signup-label' for="email">Email</label>
                     <input
                         type='text'
                         id='email'
-                        placeholder='email'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                </label>
-                <br />
-                <label>
+                    <br />
+                    <label id='signup-label' for="password">Password</label>
                     <input
                         type='password'
                         id='password'
-                        placeholder='password'
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
+                    <div className='password-message'>
+                        <p>Passwords must contain at least six characters.</p>
+                    </div>
+                    <br />
+                    <button className='login-form-button' type="submit">Log In</button>
+                    <br />
+                    <button className='login-form-button' onClick={e => demoLogin(e)}>Demo Login</button>
+                </form>
+                <br />
+                <br />
+                <label className='agreement-message'>
+                    <p>By clicking “Sign up”, you agree to our <span>be nice</span> policy. Please be positive and constructive. Thank you and have a great day!</p>
                 </label>
-                <br />
-                <button className='login-form-button' type="submit">Log In</button>
-                <br />
-                <button className='login-form-button' onClick={e => demoLogin(e)}>Demo Login</button>
-                <br />
-            </form>
-            <ul>
-                {errors.map(error => <li key={error}>{error}</li>)}
-            </ul>
+                <ul>
+                    {errors.map(error => <li key={error}>{error}</li>)}
+                </ul>
+            </div>
+
+            <div className='signup-login-link'>
+                <p>Already have an account? <NavLink to='/signup'>Log in</NavLink></p>
+                <p></p>
+            </div>
         </div>
     );
 }

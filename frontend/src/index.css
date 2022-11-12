@@ -37,8 +37,17 @@ html {
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Liberation Sans", sans-serif;
 }
 body {
+	height: 100%;
+	width: 100%;
 	line-height: 1;
+	background-color: hsl(210, 8%, 95%);
 }
+#root {
+	height: 100%;
+	width: 100%;
+}
+.app
+
 ol, ul {
 	list-style: none;
 }
@@ -56,6 +65,8 @@ table {
 }
 
 .app-container {
+	height: 100%;
+	width: 100%;
     display: flex;
     flex-direction: column;
 }
