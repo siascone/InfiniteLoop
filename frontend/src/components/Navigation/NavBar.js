@@ -56,7 +56,7 @@ function NavBar() {
         <div className='nav-bar'>
             <div className='nav-bar-left'>
                 <div className="nav-menu" onClick={openMenu}>
-                    <i class="fas fa-bars"></i>
+                    <i className="fas fa-bars"></i>
                     {showMenu && (
                         <ul className='menu-dropdown'>
                             {/* <li>{user.username}</li>
