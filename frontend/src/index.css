@@ -70,3 +70,7 @@ table {
     display: flex;
     flex-direction: column;
 }
+
+.header-buffer {
+	height: 60px;
+}
