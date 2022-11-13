@@ -1,6 +1,6 @@
 .signup-main {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     /* margin-top: 98px; */
@@ -23,10 +23,11 @@
 }
 
 .signup-message {
-    padding-top: 270px;
+    display: none;
+    /* padding-top: 270px;
     font-size: 20px;
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 20px; */
 }
 
 .signup-message > p {
@@ -71,6 +72,7 @@
     padding: 16px;
     font-size: 13px;
     padding-bottom: 70px;
+    /* text-align: center; */
 }
 
 .signup-login-link > p > a {
@@ -85,4 +87,49 @@
 .signup-form-button {
     /* width: 100%; */
     /* margin-bottom: 10px; */
+}
+
+.signup-form-left {
+    display: flex;
+    flex-direction: column;
+    margin: 0 48px 128px 0;
+    color: #232629
+}
+
+.signup-form-left > h1 {
+    font-size: 27px;
+    margin: 0 0 24px;
+}
+.signup-form-left > ul > li {
+    margin: 0 0 24px;
+    font-size: 15px;
+}
+.signup-form-left > ul > li > svg {
+    fill: #0A95ff;
+}
+
+.signup-form-left > p {
+    font-size: 13px;
+    color: #6A737C
+}
+
+.signup-form-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media only screen and (max-width: 900px) {
+    .signup-form-left {
+        display: none;
+    }
+
+    .signup-message {
+        display: block;
+        padding-top: 270px;
+        font-size: 20px;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    
 }
