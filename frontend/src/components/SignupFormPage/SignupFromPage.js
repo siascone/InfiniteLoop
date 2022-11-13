@@ -117,7 +117,7 @@ function SignupFormPage() {
                 </div>
 
                 <div className='signup-login-link'>
-                    <p>Already have an account? <NavLink to='/signup'>Log in</NavLink></p>
+                    <p>Already have an account? <NavLink to='/login'>Log in</NavLink></p>
                     <p></p>
                 </div>
             </div>
