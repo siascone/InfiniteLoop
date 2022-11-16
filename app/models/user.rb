@@ -53,4 +53,8 @@ class User < ApplicationRecord
     self.session_token ||= generate_unique_session_token
   end 
 
+  has_many :questions,
+    class_name: "Question",
+    foreign_key: "user_id"
+    
 end
