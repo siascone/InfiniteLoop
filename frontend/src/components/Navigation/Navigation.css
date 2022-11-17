@@ -75,7 +75,7 @@
     padding-left: 10px;
 } */
 
-.auth-link-login, .nav-logout {
+.auth-link-login, .nav-logout, .ask-a-question {
     color: #39739D;
     background-color: #E1ECF4;
     padding: 8px 10px;
@@ -88,14 +88,21 @@
     box-shadow: inset 0 1px 0 0 hsl(0deg 0% 100% / 40%);
 }
 
-.nav-logout {
+.nav-logout, .ask-a-question {
     height: 34px;
     align-self: center;
 }
 
-.auth-link-login:hover, .nav-logout:hover {
+.auth-link-login:hover, .nav-logout:hover, .ask-a-question:hover {
     background-color: hsl(205, 57%, 81%);
 }
+
+.ask-a-question {
+    width: 100px;
+    text-decoration: none;
+    height: 16px;
+}
+
 .auth-link-signup {
     color: #FFFFFF;
     background-color: #0A95FF;

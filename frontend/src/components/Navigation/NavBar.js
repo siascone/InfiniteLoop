@@ -39,6 +39,7 @@ function NavBar() {
         sessionLinks = (
             sessionLinks = (
                 <div className='nav-links-logged-in'>
+                    <NavLink to='/newQuestion' className='ask-a-question'>Ask a Question</NavLink>
                     <button className='nav-logout' onClick={logout}>Logout</button>
                     <ProfileButton user={sessionUser} />
                 </div>

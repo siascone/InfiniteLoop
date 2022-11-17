@@ -17,10 +17,10 @@ function QuestionsIndex() {
         <>
             <div className="header-buffer"></div>
             <div className="questions-main">
-                <LeftSideMenu />
+                {/* <LeftSideMenu /> */}
                 <div className="questions-index">
                     {questions.map(question => {
-                        return <QuestionIndexItem question={question} />
+                        return <QuestionIndexItem key={question.id} question={question} />
                     })}
                 </div>
             </div>
