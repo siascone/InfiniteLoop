@@ -6,6 +6,7 @@ import NavBar from './components/Navigation/NavBar';
 import { useSelector } from 'react-redux';
 import SplashPage from './components/SplashPage/SplashPage';
 import QuestionsIndex from './components/Questions/QuestionsIndex';
+import QuestionShowPage from './components/Questions/QuestionShowPage';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
       <Switch>
         <Route exact path='/login' component={LoginFormPage}/>
         <Route exact path='/signup' component={SignupFormPage}/>
+        <Route exact path='/question/:questionId' component={QuestionShowPage} />
         <Route exact path='/' component={home} />
       </Switch>
     </div>
