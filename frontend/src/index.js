@@ -8,13 +8,15 @@ import configureStore from './store/store';
 import csrfFetch from './store/csrf';
 import * as sessionActions from './store/session';
 import logo from './components/Navigation/logo.png'
+import * as questionActions from './store/questions';
 
 const store = configureStore();
 
 if (process.env.NODE_ENV !== 'production') {
   window.store = store;
   window.csrfFetch = csrfFetch;
-  window.sessionActions = sessionActions
+  window.sessionActions = sessionActions;
+  window.questionActions = questionActions;
 };
 
 window.logo = logo;
