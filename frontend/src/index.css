@@ -40,7 +40,8 @@ body {
 	height: 100%;
 	width: 100%;
 	line-height: 1;
-	background-color: hsl(210, 8%, 95%);
+	/* background-color: hsl(210, 8%, 95%); */
+	background-color: white;
 }
 #root {
 	height: 100%;
