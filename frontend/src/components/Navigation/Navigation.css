@@ -94,11 +94,9 @@
     align-self: center;
 }
 
-.auth-link-login:hover, .nav-logout:hover, {
+.auth-link-login:hover, .nav-logout:hover {
     background-color: hsl(205, 57%, 81%);
 }
-
-
 
 .auth-link-signup, .ask-question {
     color: #FFFFFF;

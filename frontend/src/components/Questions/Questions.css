@@ -128,15 +128,25 @@
 }
 
 .question-index-item-main {
+    display: flex;
     border-bottom: 1px solid lightgray;
-    padding: 16px;
-    height: 120px;
-    
+    padding: 16px; 
+}
+
+.question-index-item-votes {
+    width: 90px;
+    height: 75px;
+    font-size: 13px;
+    text-align: right;
+    padding: 1px 16px;
 }
 
 .question-index-item-main > a {
     text-decoration: none;
-    color: #0A95ff;
+    color: #0074CC;
     font-size: 17px;
-    font-weight: 500;
+    font-weight: 400;
+}
+.question-index-item-main > a:hover {
+    color: #0A95ff;
 }
