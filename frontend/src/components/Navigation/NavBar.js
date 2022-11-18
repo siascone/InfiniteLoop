@@ -56,19 +56,19 @@ function NavBar() {
     return (
         <div className='nav-bar'>
             <div className='nav-bar-left'>
-                <div className="nav-menu" onClick={openMenu}>
+                {/* <div className="nav-menu" onClick={openMenu}>
                     <i className="fas fa-bars"></i>
                     {showMenu && (
                         <ul className='menu-dropdown'>
-                            {/* <li>{user.username}</li>
+                            <li>{user.username}</li>
                     <li>{user.email}</li>
                     <li>
                         <button onClick={logout}>Log Out</button>
-                    </li> */}
+                    </li>
                             Menu coming soon.
                         </ul>
                     )}
-                </div>
+                </div> */}
                 <NavLink className='nav-logo' exact to='/'><img className='nav-logo-img' src={window.logo} /><span className='infinite'>infinite</span><span className='loop'>loop</span></NavLink>
             </div>
             {sessionLinks}

@@ -6,6 +6,7 @@
     /* margin-top: 98px; */
     color: #232629;
     height: 100%;
+    margin-top: 100px;
 }
 
 .signup-form-container {
@@ -120,6 +121,10 @@
 }
 
 @media only screen and (max-width: 900px) {
+    .signup-main {
+        margin-top: 0px;
+    }
+
     .signup-form-left {
         display: none;
     }

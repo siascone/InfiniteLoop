@@ -15,7 +15,7 @@ function QuestionsIndex() {
 
     return (
         <>
-            <div className="header-buffer"></div>
+            {/* <div className="header-buffer"></div> */}
             <div className="questions-main">
                 {/* <LeftSideMenu /> */}
                 <div className="questions-index">
