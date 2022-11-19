@@ -61,7 +61,8 @@ function NewQuestionForm (props) {
                     value={body}
                     init={{
                         height: 500,
-                        menubar: true
+                        menubar: true,
+                        plugins: 'codesample'
                     }}
                     onEditorChange={handleEditorChange}
                 />
