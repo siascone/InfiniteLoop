@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, NavLink } from "react-router-dom";
 import { fetchQuestion } from "../../store/questions";
 import parse from 'html-react-parser';
+import { CopyBlock, dracula } from "react-code-blocks";
 
 function QuestionShowPage (props) {
     const dispatch = useDispatch();
@@ -20,7 +21,11 @@ function QuestionShowPage (props) {
         <div className='question-show'>
             <p>Title: {question.title}</p>
             <br />
-            {parse(question.body)}
+            {/* {parse(question.body)} */}
+            <CopyBlock 
+                text={question.body}
+                theme={dracula}
+            />
             <NavLink to={`/editQuestion/${question.id}`}>Edit Question</NavLink>
         </div>
     )
