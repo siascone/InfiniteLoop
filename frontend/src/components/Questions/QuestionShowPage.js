@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, NavLink } from "react-router-dom";
 import { fetchQuestion } from "../../store/questions";
-
+import parse from 'html-react-parser';
 
 function QuestionShowPage (props) {
     const dispatch = useDispatch();
@@ -19,7 +19,8 @@ function QuestionShowPage (props) {
     return (
         <div className='question-show'>
             <p>Title: {question.title}</p>
-            <p>Body: {question.body}</p>
+            <br />
+            {parse(question.body)}
             <NavLink to={`/editQuestion/${question.id}`}>Edit Question</NavLink>
         </div>
     )

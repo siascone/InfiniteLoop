@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as questionActions from '../../store/questions';
 import { useParams, Redirect } from "react-router-dom";
+import { Editor } from "@tinymce/tinymce-react";
 
 
 function EditQuestionForm(props) {
@@ -25,6 +26,10 @@ function EditQuestionForm(props) {
     }, [question]);
 
     if (!question) return null;
+
+    const handleEditorChange =(content, editor) => {
+        setBody(content);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -63,10 +68,18 @@ function EditQuestionForm(props) {
                     onChange={(e) => setTitle(e.target.value)}
                 />
                 <br />
-                <textarea
+                <Editor
+                    value={body}
+                    init={{
+                        height: 500,
+                        menubar: true
+                    }}
+                    onEditorChange={handleEditorChange}
+                />
+                {/* <textarea
                     value={body}
                     onChange={(e) => setBody(e.target.value)}
-                ></textarea>
+                ></textarea> */}
                 <input type="submit" name="" value="Submit Question" />
             </form>
             <ul>
