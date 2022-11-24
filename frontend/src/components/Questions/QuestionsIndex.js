@@ -4,7 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from "react";
 import * as questionActions from '../../store/questions';
 import QuestionIndexItem from "./QuestionIndexItem";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
 
 function QuestionsIndex() {
     const dispatch = useDispatch();
@@ -41,7 +42,7 @@ function QuestionsIndex() {
                                 GitHub
                             </div>
                             <ul className="dbg-ul">
-                                <li>Test</li>
+
                             </ul>
                         </div>
                         <div className="developer-bio-linkedin">
@@ -49,7 +50,7 @@ function QuestionsIndex() {
                                 LinkedIn
                             </div>
                             <ul className="dbl-ul">
-                                <li>Test</li>
+
                             </ul>
                         </div>
                         <div className="developer-bio-portfolio">
@@ -57,7 +58,7 @@ function QuestionsIndex() {
                                 Portfolio
                             </div>
                             <ul className="dbp-ul">
-                                <li>Test</li>
+
                             </ul>
                         </div>
                     </div>
