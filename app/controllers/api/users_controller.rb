@@ -1,9 +1,17 @@
 class Api::UsersController < ApplicationController
-  wrap_parameters include: User.attribute_names + ['password']
+  wrap_parameters include: User.attribute_names + ['password', 'photo']
+
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+  def index
+    @users = User.all.sort { |a, b| b.created_at <=> a.created_at }
+  end
 
   def create
     @user = User.new(user_params)
-
     if @user.save
       login!(@user)
       render :show

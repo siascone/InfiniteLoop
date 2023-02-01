@@ -17,6 +17,8 @@ class User < ApplicationRecord
     presence: true,
     uniqueness: true
 
+  has_one_attached :photo
+
 
   def self.find_by_credentials(credential, password)
     user = nil
