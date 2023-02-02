@@ -23,7 +23,6 @@ ApplicationRecord.transaction do
     password: 'password'
   )
 
-
   # More users
   10.times do 
     User.create!({

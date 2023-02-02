@@ -1,3 +1,5 @@
+require 'open-uri'
+
 class User < ApplicationRecord
   has_secure_password
 
@@ -17,8 +19,24 @@ class User < ApplicationRecord
     presence: true,
     uniqueness: true
 
-  has_one_attached :photo
+  validate :ensure_photo
 
+  before_validation :generate_default_pic
+
+  has_one_attached :photo
+  
+  def generate_default_pic
+    unless self.photo.attached?
+      file = URI.open('https://infinite-loop-seeds.s3.us-west-1.amazonaws.com/default_pic.jpg')
+      self.photo.attach(io: file, filename: 'default_pic.jpg')
+    end
+  end
+
+  def ensure_photo
+    unless self.photo.attached? 
+      errors.add(:photo, 'Must be attached')
+    end
+  end
 
   def self.find_by_credentials(credential, password)
     user = nil
@@ -41,6 +59,8 @@ class User < ApplicationRecord
     self.save!
     self.session_token
   end
+
+
 
   private
 

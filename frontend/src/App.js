@@ -10,7 +10,6 @@ import Form from './components/Users/Form';
 
 function App() {
   const [users, setUsers] = useState([])
-  const [newUsername, setNewUsername] = useState('')
   // const currentUser = useSelector(state => state.session.user);
 
   useEffect(() => {
@@ -32,7 +31,7 @@ function App() {
     <div className='app-container'>
       <NavBar />
       <UsersIndex users={users} />
-      <Form setNewUsername={setNewUsername}/>
+      <Form userId={1}/>
       <Switch>
         <Route exact path='/login' component={LoginFormPage}/>
         <Route exact path='/signup' component={SignupFormPage}/>

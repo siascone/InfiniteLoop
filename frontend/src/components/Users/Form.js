@@ -1,55 +1,53 @@
 import { useState } from "react";
+import { csrfFetch } from '../../store/csrf'
 
-function Form ({setNewUserPhoto}) {
-    const [username, setUsername] = useState('');
+function Form ({userId}) {
     const [photoFile, setPhotoFile] = useState(null);
-
-    const handleInput = e => {
-        setUsername(e.currentTarget.value)
-    }
+    const [photoUrl, setPhotoUrl] = useState(null);
 
     const handleFile = ({currentTarget}) => {
         const file = currentTarget.files[0]
         setPhotoFile(file);
+        if (file) {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload = () => setPhotoUrl(fileReader.result)
+        }
+        else setPhotoUrl(null)
     }
 
     const handleSubmit = async e => {
         e.preventDefault();
         // TODO
         const formData = new FormData();
-        formData.append('username', username)
         if (photoFile) {
-            formData.append('photo', photoFile)
+            formData.append('user[photo]', photoFile)
         }
 
-        const res = await fetch('/api/users', {
+        const res = await csrfFetch(`/api/users/${userId}`, {
             method: 'PATCH',
             body: formData
         });
 
         if (res.ok) {
             const user = await res.json();
-            setUsername('')
             setPhotoFile(null)
-            setNewUserPhoto(user)
         }
 
     }
 
+    let preview = null;
+
+    if (photoUrl) preview = <img src={photoUrl} style={{height: '100px', width: '100px'}}/>
+
     return (
-        <form>
-            <label>New Username
-                <input 
-                    type="text" 
-                    value={username}
-                    onChange={handleInput}
-                    required
-                />
-            </label>
+        <form onSubmit={handleSubmit}>
             <br/>
+            <h3>Image Preview</h3>
+            {preview}
             <input type="file" onChange={handleFile}/>
             <br/>
-            <button >Update User Details</button>
+            <button >Upload User Photo</button>
         </form>
     )
 }
