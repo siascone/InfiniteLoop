@@ -19,9 +19,9 @@ class User < ApplicationRecord
     presence: true,
     uniqueness: true
 
-  validate :ensure_photo
+  # validate :ensure_photo
 
-  before_validation :generate_default_pic
+  # before_validation :generate_default_pic
 
   has_one_attached :photo
   
