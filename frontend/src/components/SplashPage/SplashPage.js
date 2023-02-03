@@ -2,7 +2,7 @@ import './SplashPage.css'
 function SplashPage() {
     return (
         <div className="splash-main">
-            <p>I have just started working on my splash page!</p>
+            <p>Splash Page coming soon!</p>
         </div>
     )
 }
